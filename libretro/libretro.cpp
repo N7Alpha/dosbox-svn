@@ -1444,7 +1444,7 @@ bool retro_load_game(const struct retro_game_info *game)
             loadPath = normalize_path(game->path);
             const size_t lastDot = loadPath.find_last_of('.');
             char tmp[PATH_MAX_LENGTH];
-            snprintf(tmp, sizeof(tmp), "%s", game->path);
+            snprintf(tmp, sizeof(tmp), "%s", loadPath.c_str());
             gamePath = std::string(tmp);
 
             /* Find any config file to load */
